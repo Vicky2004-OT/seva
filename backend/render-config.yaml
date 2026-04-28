@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: seva-sync-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-here-change-this
+      - key: OPENROUTER_API_KEY
+        value: your-openrouter-api-key-here
+      - key: FIREBASE_PROJECT_ID
+        value: seva-48f23
+      - key: FIREBASE_CLIENT_EMAIL
+        value: demo@seva-48f23.iam.gserviceaccount.com
+      - key: FIREBASE_PRIVATE_KEY
+        value: "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC7VJTUt9Us8cKB\nxhXctbdgZcfwxh6Y685RtXhiaaKqjOXQ5fKA/Q1YP+1+uYzxqnnnjVy3+kRBmIFc\nT6i2t6/t8A==\n-----END PRIVATE KEY-----"
+      - key: FIREBASE_DATABASE_URL
+        value: https://seva-48f23.firebaseio.com

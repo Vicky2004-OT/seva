@@ -1,0 +1,17 @@
+services:
+  # Backend API
+  - type: web
+    name: seva-sync-backend
+    runtime: node
+    plan: free
+    buildCommand: "cd backend && npm install"
+    startCommand: "cd backend && npm run dev"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: JWT_SECRET
+        value: your-super-secret-jwt-key-here
+      - key: OPENROUTER_API_KEY
+        value: your-openrouter-api-key-here
