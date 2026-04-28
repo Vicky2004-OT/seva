@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "VITE_API_URL": {
+      "value": "https://your-backend-name.onrender.com/api",
+      "description": "Backend API URL"
+    },
+    "VITE_OPENROUTER_API_KEY": {
+      "value": "your-openrouter-api-key-here",
+      "description": "OpenRouter.ai API Key"
+    }
+  }
+}
